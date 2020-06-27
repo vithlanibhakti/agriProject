@@ -1,0 +1,165 @@
+<html lang="en">
+	<head>
+	        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		</head>
+
+<script type="text/javascript">
+
+$(document).ready(function () {
+    $flag = 1;
+   
+   $("#submit").click(function()
+   {
+    $('tr:odd').css("color","red");
+    $('tr:even').css("color","blue");
+
+
+       
+    var email = $('#email').val();
+         var fname = $('#fname').val();
+var lname = $('#lname').val();
+var phn = $('#phn').val();
+
+var selectedLanguage = new Array(); 
+$('input[name="x"]:checked').each(function() { selectedLanguage.push(this.value)}); //checkbox print
+
+var city = $('#city').find('option:selected').text(); //select print
+
+var favorite = [];
+        $.each($("input[name='x']:checked"), function(){
+                favorite.push($(this).val());
+                
+        });
+
+var radioValue = $("input[name='g']:checked").val();
+
+         var markup = "<tr><td>" + fname 
+                   + "</td><td>" + lname 
+                //   + "</td>"+"<td>"+ radioValue
+                 // + "</td><td>" + city
+               //   +"</td><td>"+selectedLanguage.join(",")
+                  +"</td><td>" + phn
+                  +"</td><td>" + email+ "</td>"
+                  +"</td><td>" + radioValue + "</td>"
+                    +"</td><td>" + $("#city option:selected").html() + "</td>"
+                        +"</td><td>" + favorite.join(", ") + "</td>"
+          
+                  +"<td><button   id=del class=del>Delete</button></td></tr>";
+            $("table tbody").append(markup);
+
+
+$("#tbl").on('click', '#del', function () {
+            $(this).closest('tr').remove();
+
+           
+          });
+   })
+
+    $("#res").on("click",function() {
+                    $("[name='fname']").val('');
+             $("[name='lname']").val('');
+             $("[name='phn']").val('');
+             $("[name='email']").val('');
+             $("input[name*='g']").prop('checked',false);
+             $('#city').val('');
+             $("input[name*='x']").prop('checked',false);
+
+});
+
+});
+</script>
+	
+    <body>
+	       <div>
+                        <label for="name" >First name</label>
+                                <input type="text" name="fname" id="fname" placeholder="First name" data-validation="required" />
+                            </div>
+                        </div>
+                        <span id="error_fname" class="text-danger"></span>
+                    </div>
+					
+					
+	       <div>
+                        <label for="name" >Last name</label>
+                                <input type="text" name="lname" id="lname" placeholder="Last name" data-validation="required" />
+                            </div>
+                        </div>
+                        <span id="error_lname" class="text-danger"></span>
+                    </div>
+					
+					<div>
+                        <label for="email">Email</label>
+                                <input type="email"  name="email" id="email" placeholder="Email" data-validation="required" />
+                            </div>
+                        </div>
+                        <span id="error_email" class="text-danger"></span>
+                    </div>
+
+                    <div>
+                        <label for="phn" >Phone</label>
+                                <input type="number" name="phn" id="phn" placeholder="phone no" data-validation="required" />
+                            </div>
+                        </div>
+                        <span id="error_phn" class="text-danger"></span>
+                    </div>
+                    
+                    <div>
+                        <label for="g">Select your gender:</label>
+                      male<input type="radio" name="g" id="g" value="m" checked="checked"/>
+                         female<input type="radio" name="g" id="g" value="f"/>
+                       </div>  <div>                        <span id="error_g" class="text-danger"></span>
+                       </div>
+                    </div>
+            
+            <!-- city-->
+                <div>
+            
+                    <label for="city">  Select your City :</label>
+            <select name="city"  id="city" required>
+            
+            <option value="" selected="selected"  disabled="disabled">Select your city</option>
+            
+            <option value="Ahmd">Ahmd</option>
+            
+            <option value="Pune">Pune</option>
+            
+            <option value="Banglore">Banglore</option>
+            
+            <option value="Mumbai">Mumbai</option>
+            </select>
+           <div> <span id="error_city" class="text-danger"></span>         </div>
+        </div>
+           </div>
+
+            <!-- language -->
+            <label for="x">Select your Languages:</label>
+            hindi<input type="checkbox" id="x" name="x" value="Hindi"/>
+            english<input type="checkbox" id="x" name="x" value="English"/>
+            gujarati<input type="checkbox" id="x" name="x" value="Gujarati"/>
+            <div> <span id="error_x" class="text-danger"></span>         </div>
+        </div>	
+            </div>
+                    
+					
+
+                    <div class="form-group ">
+                    <input type="button" value="Submit" id="submit" class="btn btn-secondary center"/>
+                    </div>
+
+
+                    <div class="form-group ">
+                        <input type="button" value="reset" id="res" class="btn btn-secondary center"/>
+                        </div>
+    
+                <table border="1" id="tbl">
+                    <th>
+
+                    </th>
+                </table>
+            </div>
+        </div>
+    </div>
+
+   
+
+</body>

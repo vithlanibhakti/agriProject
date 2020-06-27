@@ -1,0 +1,49 @@
+
+.ah {
+    font-size: 20px;
+    width: 4em;
+    height: 2em;
+    text-align: center;
+    line-height: 1em;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    position: relative;
+    transition: 0.5s;
+    margin: 0.4em;
+}
+
+.ah::before,
+.ah::after {
+    content: '';
+    position: absolute;
+    width: 0.6em;
+    height: 0.6em;
+    background-color: #4ba61e;
+    border-radius: 50%;
+    transition: 0.5s cubic-bezier(0.5, -0.5, 0.25, 1.5);
+    top: calc(50% - 0.6em / 2);
+}
+
+.ah::before {left: 0; z-index: -1;}
+.ah::after {right: 0; z-index: -2;}
+
+.ah:hover {
+    color: white;
+}
+
+.ah:hover::before,
+.ah:hover::after {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    background-color: black;
+}
+
+.ah:hover::before {
+    top: 0;
+}
+
+.ah:hover::after {
+    right: -0.4em;
+    filter: brightness(0.8);
+}
