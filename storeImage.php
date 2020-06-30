@@ -1,5 +1,5 @@
 <?php
-    $connect = mysqli_connect("localhost","root","","webcam"); 
+    include("connect.php");
     $img = $_POST['image'];
     $folderPath = "upload/";
   
@@ -19,11 +19,12 @@
     if (isset($_post["image"])) { 
         $file=addslashes(file_get_contents($_file["results"]["tmp_name"])); 
         $query="INSERT INTO snapshot VALUES($id,'".$fileName."')"; 
-        if (mysql_query($connect, $query)) 
+        if (mysqli_query($con, $query)) 
             { 
                 echo 'done'; 
     } 
 }
   
 ?> 
+
 

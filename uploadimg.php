@@ -1,10 +1,25 @@
 <?php 
 // Include the database configuration file  
-require_once 'conect.php'; 
- 
-$id=$_POST['id'];
+require_once 'connect.php'; 
+include "header.php";
+
+if(!isset($_SESSION['PhoneNo']))
+{
+	echo "<script>alert('You are not logged on...');</script>";
+	header("refresh:0; url='login.php'");
+}
+else
+{	
+	$PhoneNo = $_SESSION['PhoneNo'];
+       
+}
+$result = mysqli_query($con,"SELECT  Id AS EmploeeCode FROM `custlogin` where PhoneNo ='".$_SESSION['PhoneNo']."'");
+$row = mysqli_fetch_array($result);
+$EC = $row['EmploeeCode']; 
+
 // If file upload form is submitted 
 $status = $statusMsg = ''; 
+if(isset($_POST["submit"])){ 
     $status = 'error'; 
     if(!empty($_FILES["image"]["name"])) { 
         // Get file info 
@@ -18,15 +33,13 @@ $status = $statusMsg = '';
             $imgContent = addslashes(file_get_contents($image)); 
          
             // Insert image content into database 
-            $insert = mysqli_query($con,"INSERT INTO `attach`(`image`, `uploded`, `Id`) VALUES ('$imgContent', NOW(),'$id')"); 
+            $insert = mysqli_query($con,"INSERT INTO `attach`( `image`, `uploaded`,`Id`)  VALUES ('$imgContent', NOW(),'$EC')"); 
              
             if($insert){ 
                 $status = 'success'; 
                 $statusMsg = "File uploaded successfully."; 
-				echo json_encode("1 results");
             }else{ 
                 $statusMsg = "File upload failed, please try again."; 
-				echo json_encode("0 results");
             }  
         }else{ 
             $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.'; 
@@ -34,8 +47,14 @@ $status = $statusMsg = '';
     }else{ 
         $statusMsg = 'Please select an image file to upload.'; 
     } 
-
+} 
  
 // Display status message 
 echo $statusMsg; 
 ?>
+
+<form action="" method="post" enctype="multipart/form-data">
+    <label>Select Image File:</label>
+    <input type="file" name="image">
+    <input type="submit" name="submit" value="Upload">
+</form>

@@ -15,6 +15,10 @@
 <div class="container">
     
     <form method="POST" action="storeImage.php">
+	<br>
+	<br>
+	<br>
+	<a href="uploadimg.php"><h2 style="position:relative"><span class="new">Already have image? / attach image</span></h2>
         <div class="row">
             <div class="col-md-6">
                 <div id="my_camera"></div>

@@ -2,19 +2,20 @@
  <head>
   <title>Header</title>
   <meta charset="utf-8">
-    <title>Slider</title>
+  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	
+	
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <!--<link href="themes/sidenavbar.css" rel="stylesheet" type="text/css">-->
-  
   <link href="themes/adminside.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="script.js"></script>
   <link href="table.css" rel="stylesheet" type="text/css">
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+<link href="sample.css" rel="stylesheet" type="text/css" />
 <script language="javascript" src="highlightclient.js"></script>
 <link href="sample.css" rel="stylesheet" type="text/css" />
 
@@ -47,7 +48,7 @@ font-size:18px;
 
 <?php
 session_start();
-include("dbConfig.php");
+include("connect.php");
 if(!isset($_SESSION['PhoneNo']))
 {
 	echo "<script>alert('You are not logged on...');</script>";
@@ -58,16 +59,18 @@ else
 	$PhoneNo = $_SESSION['PhoneNo'];
        
 }
-$result = mysql_query("SELECT CONCAT(prefix, Id) AS EmploeeCode FROM `custlogin` where PhoneNo ='".$_SESSION['PhoneNo']."'");
-$row = mysql_fetch_array($result);
+$result = mysqli_query($con,"SELECT CONCAT(prefix, Id) AS EmploeeCode FROM `custlogin` where PhoneNo ='".$_SESSION['PhoneNo']."'");
+$row = mysqli_fetch_array($result);
 $EC = $row['EmploeeCode']; 
 
 
-$result = mysql_query("SELECT Name FROM `custlogin` where PhoneNo ='".$_SESSION['PhoneNo']."'");
-$row = mysql_fetch_array($result);
+$result = mysqli_query($con,"SELECT Name FROM `custlogin` where PhoneNo ='".$_SESSION['PhoneNo']."'");
+$row = mysqli_fetch_array($result);
  $Name = $row['Name']; 
 		?>	 
 <div>
+
+
 	<div class="wrap-input100 validate-input m-t-85 m-b-35">
 <section id="ABC">
 

@@ -8,7 +8,7 @@
   <link href="themes/adminside.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="script.js"></script>
   <link href="table.css" rel="stylesheet" type="text/css">
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
 <script language="javascript" src="highlight.js"></script>
 <link href="sample.css" rel="stylesheet" type="text/css" />
@@ -17,7 +17,7 @@
   </style>
  </head>
  <body>
-  <br /><br />
+  <br /><br /><div id="main"> 
   <center><h1><span class="a">SHIV AGRI CONSULTANCY</span></h1></center>
   <div class="container">
   <div id="navbar">  
@@ -58,6 +58,7 @@ else
   <a href="basic noti.php" class="ex1">Notification</a></center></li><br><center><li>
   <a href="s.php" class="ex1">search</a></center></li><br><center><li>
   <a href="PlantNoti.php" class="ex1">Plant Consultancy</a></center></li><br><center><li>
+  <a href="photo.php" class="ex1">Images</a></center></li><br><center><li>
   <a href="receiptView.php" class="ex1">Recipt/Payment</a></center></li><br><center><li>
   <a href="amount.php" class="ex1">Income</a></center></li><br><center><li>
   <a href="adminlogout.php" class="ex1">Logout</a></center></li><br>

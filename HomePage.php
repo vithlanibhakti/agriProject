@@ -103,7 +103,7 @@ include("header.php")?>
 </section>
 --><section style="text-align:center">
 
-<?php include_once("Hax.html");?>
+<?php include_once("hax.html");?>
 </section>
 <section id="carouselSection" style="text-align:center">
 	<div id="myCarousel" class="carousel slide">

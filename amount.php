@@ -65,15 +65,15 @@ include("adminheader.php");
  </body>
 </html>--><div id="main"> 
 <?php 
-$sql=mysql_query("SELECT SUM(amount) AS Total, MONTH(date) as month, YEAR(date) as year FROM amount GROUP BY month;");
+$sql=mysqli_query($con,"SELECT SUM(amount) AS Total, MONTH(date) as month, YEAR(date) as year FROM amount GROUP BY month;");
 echo "<h2  class='new'>"."Monthy Income :--";
-   while ($row = mysql_fetch_array($sql)) {
+   while ($row = mysqli_fetch_array($sql)) {
         echo "<br>".$row['Total'];
     }
 
-$sql=mysql_query("SELECT SUM(amount) AS YearTotal, MONTH(date) as month, YEAR(date) as year FROM amount GROUP BY year;");
+$sql=mysqli_query($con,"SELECT SUM(amount) AS YearTotal, MONTH(date) as month, YEAR(date) as year FROM amount GROUP BY year;");
 echo "<h2  class='new'>"."yearly Income :--";
-   while ($row = mysql_fetch_array($sql)) {
+   while ($row = mysqli_fetch_array($sql)) {
         echo "<br>".$row['YearTotal'];
     }
 	// include_once("footer.html");
