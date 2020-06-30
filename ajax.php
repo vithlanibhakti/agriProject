@@ -13,7 +13,7 @@ if (isset($_POST['search'])) {
             die("Query Failed!".mysql_error().$result);
 		}
 		echo "<h1>".'--------------------Customer----------------------'."</h1>";
-		echo "<table border=3>";
+		echo "<table class='table table-striped table-responsive-md btn-table'>";
 		echo "<center>	
 		<th style='padding-left:10px;padding-right:10px;'>id</th>
 		<th style='padding-left:10px;padding-right:10px;'>Name</th>
@@ -39,7 +39,7 @@ $q="SELECT `Water_Id`, `Farmer_name`, `Mobile_no`, `Village`, `Survey_no`, `Talu
             die("Query Failed!".mysql_error().$result);
 		}
 		echo "<h1>".'--------------------Water Test----------------------'."</h1>";
-		echo "<table border=3>";
+		echo "<table class='table table-striped table-responsive-md btn-table'>";
 		echo "<center>	
 		<th style='padding-left:10px;padding-right:10px;'>Water_Id</th>
 		<th style='padding-left:10px;padding-right:10px;'>Farmer_name</th>
@@ -71,7 +71,7 @@ $q="SELECT `Water_Id`, `Farmer_name`, `Mobile_no`, `Village`, `Survey_no`, `Talu
             die("Query Failed!".mysql_error().$result);
 		}
 		echo "<h1>".'--------------------Soil Test----------------------'."</h1>";
-		echo "<table border=3>";
+		echo "<table class='table table-striped table-responsive-md btn-table'>";
 		echo "<center>	
 		<th style='padding-left:10px;padding-right:10px;'>Soil_Id</th>
 		<th style='padding-left:10px;padding-right:10px;'>Farmer_name</th>
@@ -103,7 +103,7 @@ $q="SELECT `Water_Id`, `Farmer_name`, `Mobile_no`, `Village`, `Survey_no`, `Talu
             die("Query Failed!".mysql_error().$result);
 		}
 		echo "<h1>".'--------------------Plant Consulantcy----------------------'."</h1>";
-		echo "<table border=3>";
+		echo "<table class='table table-striped table-responsive-md btn-table'>";
 		echo "<center>	
 		<th style='padding-left:10px;padding-right:10px;'>Plant_Id</th>
 		<th style='padding-left:10px;padding-right:10px;'>Farmer_name</th>
@@ -136,7 +136,7 @@ $q="SELECT `Water_Id`, `Farmer_name`, `Mobile_no`, `Village`, `Survey_no`, `Talu
             die("Query Failed!".mysql_error().$result);
 		}
 		echo "<h1>".'--------------------Basic Details----------------------'."</h1>";
-		echo "<table border=3>";
+		echo "<table class='table table-striped table-responsive-md btn-table'>";
 		echo "<center>	
 		<th style='padding-left:10px;padding-right:10px;'>Basic_Id</th>
 		<th style='padding-left:10px;padding-right:10px;'>name</th>
@@ -169,7 +169,7 @@ $q="SELECT `Amount_Id`, `amount`, `date`,`Id` FROM `amount` WHERE Id LIKE '%$Nam
             die("Query Failed!".mysql_error().$result);
 		}
 		echo "<h1>".'--------------------Amount----------------------'."</h1>";
-		echo "<table border=3>";
+		echo "<table class='table table-striped table-responsive-md btn-table'>";
 				echo "<center>	
 		<th style='padding-left:10px;padding-right:10px;'>Amount_Id</th>
 		<th style='padding-left:10px;padding-right:10px;'>amount</th>

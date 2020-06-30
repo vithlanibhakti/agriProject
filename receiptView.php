@@ -1,10 +1,10 @@
 <?php
-include_once("adminheader.php");
+include_once("adminheader - Copy.php");
 ?>
 <div id="main">
 <?php
 $imagesDirectory = "webcamImage/";
- echo "Receipt Proof";
+ echo "<div class='container'> <center>Receipt Proof";
 if(is_dir($imagesDirectory))
 {
 	$opendirectory = opendir($imagesDirectory);
@@ -20,7 +20,8 @@ if(is_dir($imagesDirectory))
 		
 		if(($imgFileType == 'jpg') || ($imgFileType == 'png'))
 		{
-			echo "<img src='webcamImage/".$image."' width='200'> ";
+			echo "<img src='webcamImage/".$image."'> webcamImage/".$image." </center></div>";
+			
 		}
     }
 	
