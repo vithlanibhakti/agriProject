@@ -29,7 +29,44 @@
   background-color: yellow;
 }
 </style>
-<body>
+<body >
+
+<!-- <img
+ 
+sizes="(max-width: 1024px) 150vw, 1024px"
+srcset="
+images/web_login_bg_l1ipjq_c_scale,w_200.png 200w,
+images/web_login_bg_l1ipjq_c_scale,w_1024.png 1024w"
+src="images/web_login_bg_l1ipjq_c_scale,w_1024.png"
+alt=""> -->
+
+<picture>
+<source
+media="(max-width: 767px)"
+sizes="(max-width: 767px) 100vw, 767px"
+srcset="
+images\Design_bg_hlj2re_c_scale,w_200.png 200w,
+images\Design_bg_hlj2re_c_scale,w_767.png 767w">
+<source
+media="(min-width: 768px) and (max-width: 991px)"
+sizes="(max-width: 991px) 70vw, 694px"
+srcset="
+images\Design_bg_hlj2re_ar_4_3,c_fill,g_auto__c_scale,w_538.png 538w,
+images\Design_bg_hlj2re_ar_4_3,c_fill,g_auto__c_scale,w_694.png 694w">
+<source
+media="(min-width: 992px) and (max-width: 1199px)"
+sizes="(max-width: 1200px) 60vw, 720px"
+srcset="
+images\Design_bg_hlj2re_ar_16_9,c_fill,g_auto__c_scale,w_596.png 596w,
+images\Design_bg_hlj2re_ar_16_9,c_fill,g_auto__c_scale,w_720.png 720w">
+<img
+style="  position: absolute; z-index: -1 ;"
+sizes="(max-width: 1064px) 100vw, 1064px"
+srcset="
+images\Design_bg_hlj2re_ar_16_9,c_fill,g_auto__c_scale,w_1064.png 1064w"
+src="images\Design_bg_hlj2re_ar_16_9,c_fill,g_auto__c_scale,w_1064.png"
+alt="">
+</picture>
 
 
   <div class="container ">

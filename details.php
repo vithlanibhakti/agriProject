@@ -44,7 +44,7 @@ $q="SELECT  `Id`, `Name`, `Email`, `Password`, `PhoneNo` FROM `custlogin` WHERE 
 		{
             die("Query Failed!".mysql_error().$result);
 		}
-		echo "<div class='card'><div class=' card-header bg-success white-text text-center '>".'Customer'."</div>";
+		echo "<div class='card'><div class=' card-header bg-secondary white-text text-center '>".'Customer'."</div>";
 		echo "<table class='table table-striped table-responsive-md btn-table'>";
 		echo "<center>	
 		<th style='padding-left:10px;padding-right:10px;'>id</th>
@@ -52,7 +52,7 @@ $q="SELECT  `Id`, `Name`, `Email`, `Password`, `PhoneNo` FROM `custlogin` WHERE 
 		<th style='padding-left:10px;padding-right:10px;'>Email</th>
 		<th style='padding-left:10px;padding-right:10px;'>Password</th>
 		<th style='padding-left:20px;padding-right:20px;'>PhoneNo</th>
-		</center></div>";
+		</center>";
 		while($row=mysql_fetch_assoc($result))
 		{
 			echo "<tr>";
@@ -62,7 +62,7 @@ $q="SELECT  `Id`, `Name`, `Email`, `Password`, `PhoneNo` FROM `custlogin` WHERE 
 			}
 			echo "</tr>";
 		}
-		echo "</table>";
+		echo "</table></div>";
 
 $q="SELECT `Water_Id`, `Farmer_name`, `Mobile_no`, `Village`, `Survey_no`, `Taluka`, `TestingDate`, `CropName`, `SampleNo`,`Id` FROM `water` WHERE Id = '$Id'";
 	$result=mysql_query($q);
@@ -70,7 +70,7 @@ $q="SELECT `Water_Id`, `Farmer_name`, `Mobile_no`, `Village`, `Survey_no`, `Talu
 		{
             die("Query Failed!".mysql_error().$result);
 		}
-		echo "<div class='card'><div class=' card-header bg-success white-text text-center '>".'Water Test'."</h1> </div>";
+		echo "<div class='card'><div class=' card-header bg-secondary white-text text-center '>".'Water Test'."</h1> </div>";
 		echo "<table class='table table-striped table-responsive-md btn-table'>";
 		echo "<center>	
 		<th style='padding-left:10px;padding-right:10px;'>Water_Id</th>
@@ -102,7 +102,7 @@ $q="SELECT `Water_Id`, `Farmer_name`, `Mobile_no`, `Village`, `Survey_no`, `Talu
 		{
             die("Query Failed!".mysql_error().$result);
 		}
-		echo "<div class='card'><div class=' card-header bg-success white-text text-center '>".'--------------------Soil Test----------------------'."</div>";
+		echo "<div class='card'><div class=' card-header bg-secondary white-text text-center '>".'Soil Test'."</div>";
 		echo "<table class='table table-striped table-responsive-md btn-table'>";
 		echo "<center>	
 		<th style='padding-left:10px;padding-right:10px;'>Soil_Id</th>
@@ -134,7 +134,7 @@ $q="SELECT `Water_Id`, `Farmer_name`, `Mobile_no`, `Village`, `Survey_no`, `Talu
 		{
             die("Query Failed!".mysql_error().$result);
 		}
-		echo "<div class='card'><div class=' card-header bg-success white-text text-center '>".'--------------------Plant Consulantcy----------------------'."</div>";
+		echo "<div class='card'><div class=' card-header bg-secondary white-text text-center '>".'Plant Consulantcy'."</div>";
 		echo "<table class='table table-striped table-responsive-md btn-table'>";
 		echo "<center>	
 		<th style='padding-left:10px;padding-right:10px;'>Plant_Id</th>
@@ -167,7 +167,7 @@ $q="SELECT `Water_Id`, `Farmer_name`, `Mobile_no`, `Village`, `Survey_no`, `Talu
 		{
             die("Query Failed!".mysql_error().$result);
 		}
-		echo "<div class='card'><div class=' card-header bg-success white-text text-center '>".'Basic Details'."</div>";
+		echo "<div class='card'><div class=' card-header bg-secondary white-text text-center '>".'Basic Details'."</div>";
 		echo "<table class='table table-striped table-responsive-md btn-table'>";
 		echo "<center>	
 		<th style='padding-left:10px;padding-right:10px;'>Basic_Id</th>
@@ -200,7 +200,7 @@ $q="SELECT `Water_Id`, `Farmer_name`, `Mobile_no`, `Village`, `Survey_no`, `Talu
 		{
             die("Query Failed!".mysql_error().$result);
 		}
-		echo "<div class='card'><div class=' card-header bg-success white-text text-center '>".'Amount'."</div>";
+		echo "<div class='card'><div class=' card-header bg-secondary white-text text-center '>".'Amount'."</div>";
 		echo "<table class='table table-striped table-responsive-md btn-table'>";
 		echo "<center>	
 		<th style='padding-left:10px;padding-right:10px;'>Amount_Id</th>

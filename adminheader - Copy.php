@@ -80,7 +80,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right text-success ">
           <span class="dropdown-item dropdown-header count "></span>
-          
+
         </div>
       </li>
 
@@ -89,38 +89,57 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar  sidebar-success bg-success">
-    <!-- Brand Logo -->
+  <aside class="main-sidebar sidebar-success bg-success elevation-4">
+    <!-- Brand Logo --> <a href="javascript:void(0)" data-widget="pushmenu" class="btn d-flex justify-content-end" href="#" role="button" style="align-content: flex-end;"> 
+    <p><i class="fa fa-times-circle" aria-hidden="true"></i>  </p> 
+  </a>
     <a href="index3.html" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Admin</span>
     </a>
+   
+    <div class="sidebar">
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          
+          <li class="nav-item">
+            <a class="nav-link text-white " href="basicDetailsView.php">
+              <i class="nav-icon fa fa-home "></i>
+              <p>
+              Home
+              </p>
+            </a>
+          </li>
 
-    <!-- Sidebar Menu -->
-    <nav class="mt-2">
-      <ul class="navbar-nav text-center ">
-        <li class="nav-item ">
-          <a class="nav-link text-white" href="basicDetailsView.php">Home</a></li>
-        
-        </li>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link text-white" href="receiptView.php">
+            <i class="nav-icon fas fa-file-invoice"></i>
+              <p>Recipt/Payment</p></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="amount.php">
+            <i class="nav-icon far fa-money-bill-alt"></i>  
+            <p>Income</p></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="adminlogout.php">
+            <i class="nav-icon fas fa-sign-out-alt"></i>  
+            <p>Logout</p></a>
+          </li>
+        </ul>
+
         <!-- <li class="nav-item">
             <a class="nav-link text-white" href="s.php">search</a>
           </li> -->
-        <!-- <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link text-white" href="PlantNoti.php">Plant Consultancy</a>
           </li> -->
-        <li class="nav-item">
-          <a class="nav-link text-white" href="receiptView.php">Recipt/Payment</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="amount.php">Income</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="adminlogout.php">Logout</a>
-        </li>
-      </ul>
 
-    </nav>
+      </nav>
+    </div>
     <!-- /.sidebar-menu -->
 
     <!-- /.sidebar -->
@@ -129,75 +148,73 @@
   echo "<div class='container'><center><div cass='table' id='display'></div></center></div>";
 
   ?>
-<div class="container ">
+  <div class="container ">
 
-  <!-- jQuery -->
-  <script src="plugins/jquery/jquery.min.js"></script>
-  <!-- jQuery UI 1.11.4 -->
-  <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-  <script>
-    $.widget.bridge('uibutton', $.ui.button)
-  </script>
-  <!-- Bootstrap 4 -->
-  <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- ChartJS -->
-  <script src="plugins/chart.js/Chart.min.js"></script>
-  <!-- Sparkline -->
-  <script src="plugins/sparklines/sparkline.js"></script>
-  <!-- JQVMap -->
-  <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
-  <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-  <!-- jQuery Knob Chart -->
-  <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
-  <!-- daterangepicker -->
-  <script src="plugins/moment/moment.min.js"></script>
-  <script src="plugins/daterangepicker/daterangepicker.js"></script>
-  <!-- Tempusdominus Bootstrap 4 -->
-  <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-  <!-- Summernote -->
-  <script src="plugins/summernote/summernote-bs4.min.js"></script>
-  <!-- overlayScrollbars -->
-  <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-  <!-- AdminLTE App -->
-  <script src="dist/js/adminlte.js"></script>
-  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-  <script src="dist/js/pages/dashboard.js"></script>
-  <!-- AdminLTE for demo purposes -->
-  <script src="dist/js/demo.js"></script>
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+      $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJS -->
+    <script src="plugins/chart.js/Chart.min.js"></script>
+    <!-- Sparkline -->
+    <script src="plugins/sparklines/sparkline.js"></script>
+    <!-- JQVMap -->
+    <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="plugins/moment/moment.min.js"></script>
+    <script src="plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Summernote -->
+    <script src="plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="dist/js/pages/dashboard.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="dist/js/demo.js"></script>
 
-  <script>
-$(document).ready(function(){
- 
- function load_unseen_notification(view = '')
- {
-  $.ajax({
-   url:"fetch.php",
-   method:"POST",
-   data:{view:view},
-   dataType:"json",
-   success:function(data)
-   {
-    $('.dropdown-menu').html(data.notification);
-    if(data.unseen_notification > 0)
-    {
-     $('.count').html(data.unseen_notification);
-    }
-   }
-  });
- }
- 
- load_unseen_notification();
- 
- $(document).on('click', '.dropdown-toggle', function(){
-  $('.count').html('');
-  load_unseen_notification('yes');
- });
- 
- setInterval(function(){ 
-  load_unseen_notification();; 
- }, 5000);
- 
-});
+    <script>
+      $(document).ready(function() {
 
-</script>
+        function load_unseen_notification(view = '') {
+          $.ajax({
+            url: "fetch.php",
+            method: "POST",
+            data: {
+              view: view
+            },
+            dataType: "json",
+            success: function(data) {
+              $('.dropdown-menu').html(data.notification);
+              if (data.unseen_notification > 0) {
+                $('.count').html(data.unseen_notification);
+              }
+            }
+          });
+        }
+
+        load_unseen_notification();
+
+        $(document).on('click', '.dropdown-toggle', function() {
+          $('.count').html('');
+          load_unseen_notification('yes');
+        });
+
+        setInterval(function() {
+          load_unseen_notification();;
+        }, 5000);
+
+      });
+    </script>

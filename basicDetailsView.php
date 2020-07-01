@@ -38,7 +38,8 @@
 		<div id="navbar">
 
 			<center>
-				<h3>List of Customers</h3>
+			<div class='card mt-2'>
+				<div class=' card-header bg-secondary white-text text-center '><h3>List of Customers</h3></div>
 			</center>
 
 			<?php
@@ -71,9 +72,9 @@
 				echo "<td> <a href='deleteuser.php?Id=" . $row['Id'] . "'>Delete</a></td>";
 				echo "</tr>";
 			}
-			echo "</table>";
+			echo "</table></div>";
 
-			include_once("footer.html");
+			//include_once("footer.html");
 
 			echo "</center>"; ?>
 		</div>
