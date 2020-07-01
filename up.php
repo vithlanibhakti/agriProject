@@ -1,6 +1,6 @@
 <?php 
 // Include the database configuration file  
-require_once 'dbConfig.php'; 
+require_once 'connect.php'; 
  
 // If file upload form is submitted 
 $status = $statusMsg = ''; 
@@ -18,7 +18,7 @@ if(isset($_POST["submit"])){
             $imgContent = addslashes(file_get_contents($image)); 
          
             // Insert image content into database 
-            $insert = mysql_query("INSERT into images (image, uploaded) VALUES ('$imgContent', NOW())"); 
+            $insert = mysqli_query($con,"INSERT into images (image, uploaded) VALUES ('$imgContent', NOW())"); 
              
             if($insert){ 
                 $status = 'success'; 

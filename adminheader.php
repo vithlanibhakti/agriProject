@@ -11,6 +11,7 @@
   <link href="table.css" rel="stylesheet" type="text/css">
 
 
+
   <script language="javascript" src="highlight.js"></script>
   <link href="sample.css" rel="stylesheet" type="text/css" />
 
@@ -20,6 +21,7 @@
       color: #4ba61e;
     }
   </style>
+
 </head>
 
 <body>
@@ -27,6 +29,7 @@
   <center>
     <h1><span class="a">SHIV AGRI CONSULTANCY</span></h1>
   </center>
+
   <div class="container">
     <div id="navbar">
       <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
@@ -45,6 +48,7 @@
       <?php
       include_once 'dbConfig.php';
       session_start();
+
       if (!isset($_SESSION['PhoneNo'])) {
         echo "<script>alert('You are not logged on...');</script>";
         header("refresh:0; url='adminlogin.php'");
@@ -87,6 +91,7 @@
               setPage()
             </script>
           </div>
+
 
         </div>
 

@@ -1,7 +1,7 @@
 <?php
 //insert.php
 session_start();
-include("dbConfig.php");
+include("connect.php");
 if(!isset($_SESSION['PhoneNo']))
 {
 	echo "<script>alert('You are not logged on...');</script>";
@@ -11,13 +11,10 @@ else
 {	
 	$PhoneNo = $_SESSION['PhoneNo'];
  }
-$result = mysql_query("SELECT Id FROM `custlogin` where PhoneNo ='".$_SESSION['PhoneNo']."'");
-$row = mysql_fetch_array($result);
+$result = mysqli_query($con,"SELECT Id FROM `custlogin` where PhoneNo ='".$_SESSION['PhoneNo']."'");
+$row = mysqli_fetch_array($result);
  $EC = $row['Id']; 
 
-//if(isset($_POST["name"]))
-//{
- include("connect.php");
  $name = mysqli_real_escape_string($con, $_POST["fname"]);
  $phn = mysqli_real_escape_string($con, $_POST["phn"]);
  $village = mysqli_real_escape_string($con, $_POST["village"]);

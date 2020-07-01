@@ -1,6 +1,8 @@
 <style>
 
-
+:root {
+    font-size: 10px;
+}
 
 *,
 *::before,
@@ -110,29 +112,26 @@ include("header.php");
 require_once 'connect.php'; 
  
 // Get image data from database 
-$result = mysqli_query($con,"SELECT * FROM images ORDER BY uploaded DESC"); 
+$result = mysqli_query($con,"SELECT Id,image FROM attach ORDER BY uploaded DESC"); 
 $num=mysqli_num_rows($result);
 $data = array();
 ?>
 
 <?php if($num > 0){ ?> 
-   
+    <div class="gallery"> 
 	<main>
 
 	<div class="container">
 
-		<div class="m-1">
+		<div class="gallery">
 
-			<div class="row">
+			<div class="gallery-item" tabindex="0">
 
-        <?php while($row = mysql_fetch_assoc($result)){ ?>
-            <div class="row" >
-            <div class="col-sm-12 col-6 m-1">
-            <img class="img-fluid" src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" /> 
-        </div>
-        </div>
-
-        <?php } ?> 
+        <?php while($row = mysqli_fetch_assoc($result)){?><br><br><?php
+echo "<p style='color:red; font-size:22px'>" . $row['Id'] . "</p>";		
+		?> <br><br>
+            <img class="img" src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" /> 
+        <?php  } ?> 
 		
 			</div>
 

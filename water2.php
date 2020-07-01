@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-include("dbConfig.php");
+include("connect.php");
 include("header.php");
 if(!isset($_SESSION['PhoneNo']))
 {
@@ -12,14 +12,13 @@ else
 {	
 	$PhoneNo = $_SESSION['PhoneNo'];
  }
-$result = mysql_query("SELECT CONCAT(prefix, Id) AS EmploeeCode FROM `custlogin` where PhoneNo ='".$_SESSION['PhoneNo']."'");
-$row = mysql_fetch_array($result);
+$result = mysqli_query($con,"SELECT CONCAT(prefix, Id) AS EmploeeCode FROM `custlogin` where PhoneNo ='".$_SESSION['PhoneNo']."'");
+$row = mysqli_fetch_array($result);
  $EC = $row['EmploeeCode']; 
 
-$result = mysql_query("SELECT Name FROM `custlogin` where PhoneNo ='".$_SESSION['PhoneNo']."'");
-$row = mysql_fetch_array($result);
+$result = mysqli_query($con,"SELECT Name FROM `custlogin` where PhoneNo ='".$_SESSION['PhoneNo']."'");
+$row = mysqli_fetch_array($result);
 $Name = $row['Name']; 
-  include_once 'dbConfig.php';
 $fname=$_POST["fname"];
 $phn=$_POST["phn"];
 $village=$_POST["village"];
@@ -51,11 +50,11 @@ $rscr=$_POST["rscr"];
 $opinion=$_POST["opinion"];
    $sql="INSERT INTO `water`(`Farmer_name`, `Mobile_no`, `Village`, `Survey_no`, `Taluka`, `TestingDate`, `CropName`, `SampleNo`, `PH`, `EC`, `NA`, `CA`, `SAR`, `ClassSAR`, `PPM`, `Co3`, `RSC`, `PHR`, `ECR`, `NAR`, `CAR`, `SARR`, `ClassR`, `PPMR`, `COR`, `RSCR`, `Opinion`)
    VALUES ('$fname','$phn','$village','$survey','$taluka','$testing','$crop','$sample','$pho','$eco','$nao','$cao','$sao','$classo','$salto','$coo','$rsco','$phr','$ecr','$nar','$car','$sar','$classr','$saltr','$cor','$rscr','$opinion')";
-if(mysql_query($sql)){
+if(mysqli_query($con,$sql)){
      echo "suuccess";
 
  } else{
- echo "ERROR: Could not able to execute $sql. " . mysql_error($conn);
+ echo "ERROR: Could not able to execute $sql. " . mysqli_error($con);
  }
   include("footer.html");
 ?>

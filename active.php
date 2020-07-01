@@ -68,11 +68,6 @@ nav ul li a{
   </ul>
     </nav>
   </div>
- 
-  
-          
-           
-           
            
            <body>
     <script> 

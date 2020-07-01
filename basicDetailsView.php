@@ -1,4 +1,23 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Admin HomePage</title>
+  <meta charset="utf-8">
+ 
+    <meta name="description" content="">
+    <meta name="author" content="">
+	
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="themes/adminside.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="script.js"></script>
+<script language="javascript" src="highlight.js"></script>
+<link href="sample.css" rel="stylesheet" type="text/css" />
+<link href="table.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+
 	.top-contact-menu {
 
 		width: 100%;
@@ -42,49 +61,61 @@
 				<div class=' card-header bg-secondary white-text text-center '><h3>List of Customers</h3></div>
 			</center>
 
-			<?php
-			echo "<center>";
+		<?php
+//Including Database configuration file.
+include "connect.php";
 
-			$q = "SELECT `Id`, `Name`, `Email`, `Password`, `PhoneNo` FROM `custlogin`";
-			$result = mysql_query($q);
-			if ($result === FALSE) {
-				die("Query Failed!" . mysql_error() . $result);
-			}
+      session_start();
+if(!isset($_SESSION['PhoneNo']))
+{
+	echo "<script>alert('You are not logged on...');</script>";
+	header("refresh:0; url='adminlogin.php'");
+}
+else
+{
+	$PhoneNo = $_SESSION['PhoneNo'];
+}
 
-			echo "<table class='table'>";
-			echo "<center>	
 
+	$q="SELECT  `Id`, `Name`, `Email`, `Password`, `PhoneNo` FROM `custlogin`";
+	$result=mysqli_query($con,$q);
+		 if($result === FALSE)
+		{
+            die("Query Failed!".mysqli_error().$result);
+		}
+	
+		echo "<table  class='table'>";
+		echo "<center>	
+		<th style='padding-left:10px;padding-right:10px;'>id</th>
 
-		<th style='padding-left:10px;padding-right:10px;'>Id</th>
 		<th style='padding-left:10px;padding-right:10px;'>Name</th>
 		<th style='padding-left:10px;padding-right:10px;'>Email</th>
 		<th style='padding-left:10px;padding-right:10px;'>Password</th>
 		<th style='padding-left:20px;padding-right:20px;'>PhoneNo</th>
 		<th style='padding-left:20px;padding-right:20px;'>Details</th>
 		<th style='padding-left:20px;padding-right:20px;'>Delete</th>
+		
 		</center>";
-			while ($row = mysql_fetch_assoc($result)) {
-				echo "<tr>";
-				foreach ($row as $v) {
-					echo "<td style='padding:5px;'>" . $v . "</td>";
-				}
-				echo "<td> <a href='details.php?Id=" . $row['Id'] . "'>Details</a></td>";
-				echo "<td> <a href='deleteuser.php?Id=" . $row['Id'] . "'>Delete</a></td>";
-				echo "</tr>";
+
+		while($row=mysqli_fetch_assoc($result))
+		{
+			echo "<tr>";
+			foreach($row as $v)
+			{
+				echo "<td style='padding:5px;'>".$v."</td>";
 			}
-			echo "</table></div>";
-
-			//include_once("footer.html");
-
-			echo "</center>"; ?>
-		</div>
-	</div>
-</div>
+				echo "<td> <a href='details.php?Id=".$row['Id']."'>Details</a></td>";
+				echo "<td> <a href='deleteuser.php?Id=".$row['Id']."'>Delete</a></td>";
+			echo "</tr>";
+		}
+		echo "</table>";
+?>
 
 </body>
 
 </html>
 <script>
+
 	// $(document).ready(function(){
 
 	// function load_unseen_notification(view = '')
@@ -118,3 +149,4 @@
 
 	// });
 </script>
+

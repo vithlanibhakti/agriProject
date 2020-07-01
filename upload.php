@@ -1,4 +1,5 @@
 <?php
+include_once("connect.php");
 
 /* Getting file name */
 $filename = $_FILES['file']['name'];
@@ -31,7 +32,7 @@ if($uploadOk == 0){
 $filename = $_FILES['file']['tmp_name'];
          
             // Insert image content into database 
-            $insert = mysql_query("INSERT INTO `attach`(`image`, `uploded`) VALUES ('$filename', NOW())"); 
+            $insert = mysqli_query($con,"INSERT INTO `attach`(`image`, `uploded`) VALUES ('$filename', NOW())"); 
              
             if($insert){ 
             echo json_encode("11 results");

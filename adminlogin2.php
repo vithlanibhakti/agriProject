@@ -1,13 +1,15 @@
 <?php 
 session_start();
-include('dbConfig.php');
+include('connect.php');
 if(isset($_POST['submit'])) 
  {
-        $phn = $_POST['phn'];
-        $password = $_POST['password'];
+        $phn =mysqli_real_escape_string($con, $_POST['phn']);
+        $password = mysqli_real_escape_string($con,$_POST['password']);
 		ECHO $phn,$password;
-	$fetch=mysql_query("SELECT * FROM admin_login WHERE PhoneNo='$phn' AND Password='$password' ");
-    $count=mysql_num_rows($fetch);
+	$fetch="SELECT * FROM admin_login WHERE PhoneNo='$phn' AND Password='$password' ";
+	  $result = mysqli_query($con,$fetch);
+
+    $count=mysqli_num_rows($result);
     echo $count;
 	if ($count != "")
 	 {

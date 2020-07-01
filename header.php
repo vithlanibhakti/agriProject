@@ -3,6 +3,7 @@
 <head>
   <title>Header</title>
   <meta charset="utf-8">
+
   <title>Slider</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
@@ -27,9 +28,12 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 
+
   <link href="themes/adminside.css" rel="stylesheet" type="text/css">
   <script type="text/javascript" src="script.js"></script>
   <link href="table.css" rel="stylesheet" type="text/css">
+
+
 
   <script language="javascript" src="highlightclient.js"></script>
   <link href="sample.css" rel="stylesheet" type="text/css" />
@@ -61,26 +65,35 @@
 </head>
 
 <?php
-session_start();  
-include("dbConfig.php");
-if (!isset($_SESSION['PhoneNo'])) {
-  echo "<script>alert('You are not logged on...');</script>";
-  header("refresh:0; url='login.php'");
-} else {
-  $PhoneNo = $_SESSION['PhoneNo'];
+
+session_start();
+include("connect.php");
+if(!isset($_SESSION['PhoneNo']))
+{
+	echo "<script>alert('You are not logged on...');</script>";
+	header("refresh:0; url='login.php'");
 }
-$result = mysql_query("SELECT CONCAT(prefix, Id) AS EmploeeCode FROM `custlogin` where PhoneNo ='" . $_SESSION['PhoneNo'] . "'");
-$row = mysql_fetch_array($result);
-$EC = $row['EmploeeCode'];
+else
+{	
+	$PhoneNo = $_SESSION['PhoneNo'];
+       
+}
+$result = mysqli_query($con,"SELECT CONCAT(prefix, Id) AS EmploeeCode FROM `custlogin` where PhoneNo ='".$_SESSION['PhoneNo']."'");
+$row = mysqli_fetch_array($result);
+$EC = $row['EmploeeCode']; 
 
 
-$result = mysql_query("SELECT Name FROM `custlogin` where PhoneNo ='" . $_SESSION['PhoneNo'] . "'");
-$row = mysql_fetch_array($result);
-$Name = $row['Name'];
-?>
-<div >
-  <div class="wrap-input100 validate-input m-t-85 m-b-35 ">
-    <section id="ABC" >
+$result = mysqli_query($con,"SELECT Name FROM `custlogin` where PhoneNo ='".$_SESSION['PhoneNo']."'");
+$row = mysqli_fetch_array($result);
+ $Name = $row['Name']; 
+		?>	 
+<div>
+
+
+	<div class="wrap-input100 validate-input m-t-85 m-b-35">
+<section id="ABC">
+
+
 
 
       <div id="mySidenav" class="sidenav bg-white">

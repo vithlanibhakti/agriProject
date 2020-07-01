@@ -32,16 +32,17 @@ include("adminheader - Copy.php");
           <span class="card-header bg-primary p-0 m-0">
         
 <?php 
-$sql=mysql_query("SELECT SUM(amount) AS Total, MONTH(date) as month, YEAR(date) as year FROM amount GROUP BY month;");
-echo "Monthy Income </span>";
-   while ($row = mysql_fetch_array($sql)) {
-        echo $row['Total'] ."<span class='card-header bg-primary p-0 m-0'>";
+
+$sql=mysqli_query($con,"SELECT SUM(amount) AS Total, MONTH(date) as month, YEAR(date) as year FROM amount GROUP BY month;");
+echo "<h2  class='new'>"."Monthy Income :--";
+   while ($row = mysqli_fetch_array($sql)) {
+        echo "<br>".$row['Total'];
     }
 
-$sql=mysql_query("SELECT SUM(amount) AS YearTotal, MONTH(date) as month, YEAR(date) as year FROM amount GROUP BY year;");
-echo "yearly Income </span>";
-   while ($row = mysql_fetch_array($sql)) {
-        echo $row['YearTotal'];
+$sql=mysqli_query($con,"SELECT SUM(amount) AS YearTotal, MONTH(date) as month, YEAR(date) as year FROM amount GROUP BY year;");
+echo "<h2  class='new'>"."yearly Income :--";
+   while ($row = mysqli_fetch_array($sql)) {
+        echo "<br>".$row['YearTotal'];
     }
 	// include_once("footer.html");
 
