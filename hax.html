@@ -1,43 +1,78 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<style>
 
-.grid-container {
-  display: grid;
-  grid-column-gap: 30px;
-  grid-template-columns: auto auto auto;
-  padding: 10px;
-}
 
-.grid-item {
-
-  padding: 10px;
-  font-size: 30px;
-  text-align: center;
-}
-</style>
+  <style>
+    .card {
+      border-radius: 15px;
+      height: 125px;
+    }
+  </style>
 </head>
+
 <body>
+  <h4 class="text-left text-muted">Our Services</h4>
+  <ul class="row nav ">
+    <li class="col-4  my-1 p-1">
+      <div class="card ">
+        <div class="card-body text-center d-flex flex-column">
+          <a href="WebIndex1.php"><img src="themes/images/icon/camera.png" height="50" width="auto"></a>
+          <span class="card-title"><a href="WebIndex1.php">Camera</a></span>
+        </div>
+      </div>
+    </li>
 
-<div class="grid-container">
-<div class="grid-item"><a href="WebIndex1.php"><img src="themes/images/PHOTO AND VIDEO.png" height="50" width="50"></a>
-<h6 class="title"><a href="WebIndex1.php">Photo/Video</a></h6></div>
+    <li class="col-4 my-1 p-1">
+      <div class="card ">
+        <div class="card-body text-center d-flex flex-column align-self-center">
+          <a href="PlantCons.php"><img src="themes/images/icon/Edit.png" height="50" width="50"></a>
+          <span class="card-title"><a href="PlantCons.php">Form</a></span>
+        </div>
+      </div>
+    </li>
 
-  <div class="grid-item"><a href="ImageRetrive.php"><img src="themes/images/SOIL WATERR.png" height="50" width="50"></a>
-  <h6 class="title"><a href="ImageRetrive.php">Soil & Water</a></h6></div>
-  
-  <div class="grid-item"><a href="ImageRetrive.php"><img src="themes/images/LANDSCAPEEI.png" height="50" width="50"></a>
-					<h6 class="title"><a href="ImageRetrive.php">Landscaping</a></h6>
-    </div>  
-  <div class="grid-item"><img src="themes/images/1consultancy.png" height="50" width="50">
-<h6 class="title"><a href="PlantCons.php">Plant Consultancy</a></h6>
-</div>
-  <div class="grid-item"><a href="ImageRetrive.php"><img src="themes/images/PHOTO AND VIDEO.png" height="50" width="50"></a>
-					<h6 class="title"><a href="ImageRetrive.php">Tips from farmer</a></h6>
-    </div>
-  
-</div>
 
+    <li class="col-4  my-1 p-1">
+      <div class="card   ">
+        <div class="card-body text-center d-flex flex-column ">
+          <a href="ImageRetrive.php"><img src="themes/images/icon/agri.png" height="50" width="50"></a>
+          <span class="card-title p-0 m-0 "><a href="ImageRetrive.php">Tips from farmer</a></span>
+        </div>
+
+    </li>
+
+
+    <li class="col-4 my-1 p-1">
+      <div class="card ">
+        <div class="card-body  text-center d-flex flex-column">
+          <a href="ImageRetrive.php"><img src="themes/images/icon/soilwater.png" height="50" width="50"></a>
+          <span class="card-title p-0 m-0"><a href="ImageRetrive.php">Soil & Water</a></span>
+        </div>
+      </div>
+    </li>
+
+    <li class="col-4 my-1 p-1">
+      <div class="card ">
+        <div class="card-body text-center d-flex flex-column ">
+          <a href="ImageRetrive.php"><img src="themes/images/icon/lanscape.png" height="50" width="auto"></a>
+          <span class="card-title"><a href="ImageRetrive.php">Landscaping</a></span>
+        </div>
+      </div>
+    </li>
+
+    <li class="col-4 my-1 p-1">
+      <div class="card ">
+        <div class="card-body text-center d-flex flex-column ">
+          <a href="#"><img src="themes/images/icon/info.png" height="50" width="auto"></a>
+          <span class="card-title"><a href="#">About us</a></span>
+        </div>
+      </div>
+    </li>
+
+
+  </ul>
 </body>
+
 </html>

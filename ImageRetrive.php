@@ -1,8 +1,6 @@
 <style>
 
-:root {
-    font-size: 10px;
-}
+
 
 *,
 *::before,
@@ -118,17 +116,22 @@ $data = array();
 ?>
 
 <?php if($num > 0){ ?> 
-    <div class="gallery"> 
+   
 	<main>
 
 	<div class="container">
 
-		<div class="gallery">
+		<div class="m-1">
 
-			<div class="gallery-item" tabindex="0">
+			<div class="row">
 
-        <?php while($row = mysqli_fetch_assoc($result)){ ?> 
-            <img class="img" src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" /> 
+        <?php while($row = mysql_fetch_assoc($result)){ ?>
+            <div class="row" >
+            <div class="col-sm-12 col-6 m-1">
+            <img class="img-fluid" src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" /> 
+        </div>
+        </div>
+
         <?php } ?> 
 		
 			</div>

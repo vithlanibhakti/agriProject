@@ -17,64 +17,51 @@
 <link href="table.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-a.ex1:hover, a.ex1:active {color: #4ba61e;} 
-.top-contact-menu {
 
-  width: 100%;
-}
-.top-contact-menu h2 {
-  color: #fff;
-  font-size: 14px;
-  display: inline-block;
-  
-}
-ul.address-top-menu {
-  list-style: none;
-  float: right;
-  padding-right: 10px;
-  vertical-align: top;
-  margin-top: 10px;
-}
+	.top-contact-menu {
+
+		width: 100%;
+	}
+
+	.top-contact-menu h2 {
+		color: #fff;
+		font-size: 14px;
+		display: inline-block;
+
+	}
+
+	ul.address-top-menu {
+		list-style: none;
+		float: right;
+		padding-right: 10px;
+		vertical-align: top;
+		margin-top: 10px;
+	}
 </style>
-</head>
-<body>
- <div id="main"> 
-  <br /><br />
-  <center><h1><span class="a">SHIV AGRI CONSULTANCY</span></h1></center>
-  <div class="container">
-  <div id="navbar">  
-  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
-  
+<?php include_once("adminheader - Copy.php"); ?> 
 
-  <div class="top-contact-menu">
-  <a href="Signup.php"><h2 style="position:relative"><span class="new">NEW ENTRY</span></h2>
-  <ul class="address-top-menu">
-  	<i class="fa fa-share-square-o" aria-hidden="true" style="font-size:34px;color:#4ba61e"></i>
-    <i class="fa fa-print" aria-hidden="true" style="font-size:34px;color:#4ba61e"></i>
-	</ul>
- </div>
- 
-  <body id="body" style="color:black;">
-  <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <center><h1 class="bk ex1 had">ADMIN</h1></center><br>
-  
-<div id="nav">
-<ul><li>
-  <center><a href="basicDetailsView.php" class="ex1">Home</a></center></li><br><center><li>
-  <a href="basic noti.php" class="ex1">Notification</a></center></li><br><center><li>
-  <a href="s.php" class="ex1">search</a></center></li><br><center><li>
-  <a href="PlantNoti.php" class="ex1">Plant Consultancy</a></center></li><br><center><li>
-  <a href="receiptView.php" class="ex1">Recipt/Payment</a></center></li><br><center><li>
-  <a href="amount.php" class="ex1">Income</a></center></li><br><center><li>
-  <a href="adminlogout.php" class="ex1">Logout</a></center></li><br>
-  </ul>
-<script language="javascript">setPage()</script>
-</div>
+<!-- <div id="main">
+	<div class="top-contact-menu">
+		<a href="SignUp.php">
+			<h2 style="position:relative"><span class="new">NEW ENTRY</span></h2>
 
-</div>
-  
-<?php
+			<ul class="address-top-menu">
+
+				<i class="fa fa-share-square-o" aria-hidden="true" style="font-size:34px;color:#4ba61e"></i>
+
+				<i class="fa fa-print" aria-hidden="true" style="font-size:34px;color:#4ba61e"></i>
+			</ul>
+	</div> -->
+
+	<div class="container">
+		<div id="navbar">
+
+			<center>
+			<div class='card mt-2'>
+				<div class=' card-header bg-secondary white-text text-center '><h3>List of Customers</h3></div>
+			</center>
+
+		<?php
 //Including Database configuration file.
 include "connect.php";
 
@@ -97,9 +84,10 @@ else
             die("Query Failed!".mysqli_error().$result);
 		}
 	
-		echo "<table border=3>";
+		echo "<table  class='table'>";
 		echo "<center>	
 		<th style='padding-left:10px;padding-right:10px;'>id</th>
+
 		<th style='padding-left:10px;padding-right:10px;'>Name</th>
 		<th style='padding-left:10px;padding-right:10px;'>Email</th>
 		<th style='padding-left:10px;padding-right:10px;'>Password</th>
@@ -108,6 +96,7 @@ else
 		<th style='padding-left:20px;padding-right:20px;'>Delete</th>
 		
 		</center>";
+
 		while($row=mysqli_fetch_assoc($result))
 		{
 			echo "<tr>";
@@ -121,17 +110,43 @@ else
 		}
 		echo "</table>";
 ?>
+
 </body>
+
 </html>
 <script>
 
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-}
+	// $(document).ready(function(){
 
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
-}
+	// function load_unseen_notification(view = '')
+	// {
+	// $.ajax({
+	// url:"fetch.php",
+	// method:"POST",
+	// data:{view:view},
+	// dataType:"json",
+	// success:function(data)
+	// {
+	// $('.dropdown-menu').html(data.notification);
+	// if(data.unseen_notification > 0)
+	// {
+	// $('.count').html(data.unseen_notification);
+	// }
+	// }
+	// });
+	// }
+
+	// load_unseen_notification();
+
+	// $(document).on('click', '.dropdown-toggle', function(){
+	// $('.count').html('');
+	// load_unseen_notification('yes');
+	// });
+
+	// setInterval(function(){ 
+	// load_unseen_notification();; 
+	// }, 5000);
+
+	// });
 </script>
+

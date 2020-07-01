@@ -1,5 +1,6 @@
 <?php 
 session_start();
+
 include('connect.php');
 if(isset($_POST['submit'])) 
  {
@@ -14,8 +15,19 @@ if(isset($_POST['submit']))
 	 {
 	 $_SESSION['PhoneNo']=$phn;
    header("Location: HomePage.php");
-	 }
+	 }elseif(isset($_POST['submit'])){
+     	$fetch="SELECT * FROM admin_login WHERE PhoneNo='$phn' AND Password='$Password'  ";
+		$result = mysqli_query($con,$fetch);
+    	$count=mysqli_num_rows($result);
+     echo $count;
+		if ($count != "")
+	 			{
+		$_SESSION['PhoneNo']=$phn;
+   		header("Location: basicDetailsView.php");
+	 			}
+	}
 	 else{
 	 header("Location: login.php");}
+
     	}
     ?>

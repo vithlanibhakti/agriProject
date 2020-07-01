@@ -1,48 +1,10 @@
-<!DOCTYPE html>
-<html>
- <head>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="themes/sidenavbar.css" rel="stylesheet" type="text/css">
 
- </head>
- <style>
-.button {
-  padding: 15px 25px;
-  font-size: 24px;
-  text-align: center;
-  cursor: pointer;
-  outline: none;
-  color: #fff;
-  background-color: #4ba61e;
-  border: none;
-  border-radius: 15px;
-  
-}
-
-.button:hover {background-color: #3e8e41}
-
-.button:active {
-  background-color: #4ba61e;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-
-.new {
-  background-color: #4ba61e;
-  border-radius: 15px;
-    width: 7em;
-font-size:38px;
-}
-</style>
-<body>
 <?php
-include("adminheader.php");
+include("adminheader - Copy.php");
 
 ?>	 
   <!--<div class="container">
-   <!--<nav class="navbar navbar-inverse">
+   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
      
      <ul class="nav navbar-nav navbar-right">
@@ -63,8 +25,14 @@ include("adminheader.php");
      <input type="submit" name="post" id="post" class="btn btn-info button" value="Post" />
    </form>
  </body>
-</html>--><div id="main"> 
+</html>-->
+<div id="container "> <center>
+<div class="card col-6 mt-5">
+        <div class="card-body  d-flex flex-column">
+          <span class="card-header bg-primary p-0 m-0">
+        
 <?php 
+
 $sql=mysqli_query($con,"SELECT SUM(amount) AS Total, MONTH(date) as month, YEAR(date) as year FROM amount GROUP BY month;");
 echo "<h2  class='new'>"."Monthy Income :--";
    while ($row = mysqli_fetch_array($sql)) {
@@ -79,8 +47,11 @@ echo "<h2  class='new'>"."yearly Income :--";
 	// include_once("footer.html");
 
 echo "</center>";
-	?>
-	</div>
+  ?>
+  </div>
+      </div>
+  </div>
+  </center>
 <script>
 $(document).ready(function(){
  
@@ -103,7 +74,7 @@ $(document).ready(function(){
   // }
  
  // load_unseen_notification();
- debugger;
+
  $('#comment_form').on('submit', function(event){
   event.preventDefault();
   if($('#amount').val() != '' )
@@ -139,13 +110,5 @@ $(document).ready(function(){
 });
 
 
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-}
-
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
-}</script>
+</script>
 
