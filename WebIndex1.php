@@ -14,7 +14,7 @@
   
 <div class="container">
     
-    <form method="POST" action="storeImage.php">
+    <form method="POST" action="storeImage.php" enctype="multipart/form-data"> 
         <div class="row">
             <div class="col-md-6">
                 <div id="my_camera"></div>
@@ -23,7 +23,7 @@
                 <input type="hidden" name="image" class="image-tag">
             </div>
             <div class="col-md-6">
-                <div id="results">Your captured image will appear here...</div>
+                <div class="card" name="results" id="results">Your captured image will appear here...</div>
             </div>
             <div class="col-md-12 text-center">
                 <br/>
@@ -49,7 +49,7 @@
     function take_snapshot() {
         Webcam.snap( function(data_uri) {
             $(".image-tag").val(data_uri);
-            document.getElementById('results').innerHTML = '<img src="'+data_uri+'"/>';
+            document.getElementById('results').innerHTML = '<img src="'+data_uri+'" />' ;
         } );
     }
 </script>

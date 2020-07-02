@@ -17,7 +17,10 @@ ul.address-top-menu {
   margin-top: 10px;
 }
 </style>
-<?php include_once("adminheader - Copy.php");?> 
+<?php include_once("adminheader - Copy.php");
+ include_once("connect.php");
+
+?> 
  
  <div id="main"> 
   
@@ -31,10 +34,10 @@ ul.address-top-menu {
 			 echo "<center>";
 			 
 	 $q="SELECT `Plant_Id`, `Farmer_Name`, `Mobile_No`, `Village`, `Survey_No`, `Taluka`, `TestingDate`, `CropName`, `SampleNo`, `status`, `Id`, `Payment_status` FROM `plantcons` ";
-				$result=mysql_query($q);
+	 $result=mysqli_query($con,$q);
 		 if($result === FALSE)
 		{
-            die("Query Failed!".mysql_error().$result);
+            die("Query Failed!".mysqli_error().$result);
 		}
 		echo "<table id='tbl' border=3>";
 		echo "<center>	
@@ -54,7 +57,7 @@ ul.address-top-menu {
 		<th style='padding-left:20px;padding-right:20px;'>Attachment</th>
 
 		</center>";
-		while($row=mysql_fetch_assoc($result))
+		while($row=mysqli_fetch_assoc($result))
 		{
 			echo "<tr class'test'>";
 				

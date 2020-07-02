@@ -1,6 +1,6 @@
 <?php
 include("connect.php");
-include("dbConfig.php");
+
  
 $id=$_POST['id'];
 $val=$_POST['val'];
@@ -20,7 +20,7 @@ echo json_encode(array($val));
 		 $date=date("Y-m-d");
 		 echo json_encode($date);
  $sql1="INSERT INTO `amount`(`amount`,`date`,`Id`) VALUES ('$val','$date','$EC')";
- $a=mysql_query($sql1);
+ $a=mysqli_query($con,$sql1);
 // if (($a) > 0) {
                            // echo json_encode("ok");	
             // }

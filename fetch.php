@@ -6,7 +6,7 @@ if($_POST["view"] != '')
     $update_query = "UPDATE try SET status = 1 WHERE status=0";
     mysqli_query($con, $update_query);
 }
-$query = "SELECT * FROM try ORDER BY id DESC LIMIT 5";
+$query = "SELECT * FROM try ORDER BY id DESC LIMIT 50";
 $result = mysqli_query($con, $query);
 $output = '';
 if(mysqli_num_rows($result) > 0)

@@ -1,38 +1,6 @@
-<style>
-	.top-contact-menu {
 
-		width: 100%;
-	}
-
-	.top-contact-menu h2 {
-		color: #fff;
-		font-size: 14px;
-		display: inline-block;
-
-	}
-
-	ul.address-top-menu {
-		list-style: none;
-		float: right;
-		padding-right: 10px;
-		vertical-align: top;
-		margin-top: 10px;
-	}
-</style>
 <?php include_once("adminheader - Copy.php"); ?> 
 
-<!-- <div id="main">
-	<div class="top-contact-menu">
-		<a href="SignUp.php">
-			<h2 style="position:relative"><span class="new">NEW ENTRY</span></h2>
-
-			<ul class="address-top-menu">
-
-				<i class="fa fa-share-square-o" aria-hidden="true" style="font-size:34px;color:#4ba61e"></i>
-
-				<i class="fa fa-print" aria-hidden="true" style="font-size:34px;color:#4ba61e"></i>
-			</ul>
-	</div> -->
 
 	<div class="container">
 		<div id="navbar">
@@ -46,27 +14,27 @@
 			echo "<center>";
 
 			$q = "SELECT `Id`, `Name`, `Email`, `Password`, `PhoneNo` FROM `custlogin`";
-			$result = mysql_query($q);
+			$result = mysqli_query($con,$q);
 			if ($result === FALSE) {
-				die("Query Failed!" . mysql_error() . $result);
+				die("Query Failed!" . mysqli_error() . $result);
 			}
 
-			echo "<table class='table'>";
+			echo "<table class='table table-striped table-responsive-md btn-table'>";
 			echo "<center>	
 
 
-		<th style='padding-left:10px;padding-right:10px;'>Id</th>
-		<th style='padding-left:10px;padding-right:10px;'>Name</th>
-		<th style='padding-left:10px;padding-right:10px;'>Email</th>
-		<th style='padding-left:10px;padding-right:10px;'>Password</th>
-		<th style='padding-left:20px;padding-right:20px;'>PhoneNo</th>
-		<th style='padding-left:20px;padding-right:20px;'>Details</th>
-		<th style='padding-left:20px;padding-right:20px;'>Delete</th>
+		<th>Id</th>
+		<th>Name</th>
+		<th>Email</th>
+		<th>Password</th>
+		<th>PhoneNo</th>
+		<th>Details</th>
+		<th>Delete</th>
 		</center>";
-			while ($row = mysql_fetch_assoc($result)) {
+			while ($row = mysqli_fetch_assoc($result)) {
 				echo "<tr>";
 				foreach ($row as $v) {
-					echo "<td style='padding:5px;'>" . $v . "</td>";
+					echo "<td>" . $v . "</td>";
 				}
 				echo "<td> <a href='details.php?Id=" . $row['Id'] . "'>Details</a></td>";
 				echo "<td> <a href='deleteuser.php?Id=" . $row['Id'] . "'>Delete</a></td>";

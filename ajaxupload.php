@@ -17,9 +17,9 @@ if(move_uploaded_file($tmp,$path))
 {
 echo "<img src='$path' />";
 //include database configuration file
-include_once 'dbConfig.php';
+include_once 'connect.php';
 //insert form data in the database
-$insert = mysql_query("INSERT uploading (file_name) VALUES ('".$path."')");
+$insert = mysqli_query($con,"INSERT uploading (file_name) VALUES ('".$path."')");
 //echo $insert?'ok':'err';
 }
 } 

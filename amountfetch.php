@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("dbConfig.php");
-include("connect.php");
+
 if(!isset($_SESSION['PhoneNo']))
 {
 	echo "<script>alert('You are not logged on...');</script>";
@@ -12,8 +12,8 @@ else
 	$PhoneNo = $_SESSION['PhoneNo'];
        
 }
-$result = mysql_query("SELECT  Id AS EmploeeCode FROM `custlogin` where PhoneNo ='".$_SESSION['PhoneNo']."'");
-$row = mysql_fetch_array($result);
+$result = mysqli_query($con,"SELECT  Id AS EmploeeCode FROM `custlogin` where PhoneNo ='".$_SESSION['PhoneNo']."'");
+$row = mysqli_fetch_array($result);
 $EC = $row['EmploeeCode']; 
 
 
@@ -36,7 +36,7 @@ if($_POST["view"] != '')
 	}
 
 }
-$query = "SELECT * FROM amount where Id=$EC ORDER BY id DESC LIMIT 5";
+$query = "SELECT * FROM amount where Id=$EC ORDER BY id DESC LIMIT 50";
 $result = mysqli_query($con, $query);
 $output = '';
 if(mysqli_num_rows($result) > 0)

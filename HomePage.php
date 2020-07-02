@@ -18,15 +18,7 @@
 
 </head>
 <style>
-	.img {
-		width: auto\9;
-		height: auto;
-		max-width: 89%;
-		vertical-align: middle;
-		border: 0;
-		-ms-interpolation-mode: bicubic;
-	}
-
+	
 
 	.icon-barf {
 		float: left;
@@ -64,7 +56,7 @@
 					<img class="rounded" src="themes/images/q.png">
 				</div>
 				<div class="carousel-item">
-					<img class="rounded" src="themes/images/i.jpg">
+					<img class="rounded" src="themes/images/image2.jpg">
 				</div>
 				<div class="carousel-item">
 					<img class="rounded" src="themes/images/u.jpg">
@@ -82,7 +74,7 @@
 		</div>
 		<div class="container">
 			<section style="text-align:center">
-				<?php include_once("Hax.html"); ?>
+				<?php include_once("hax.html"); ?>
 			</section>
 			<div class=" mt-5 ">
 				<?php include_once("footer.html") ?>

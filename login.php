@@ -22,12 +22,14 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
 </head>
 
 <style>
-  input:focus {
-  background-color: yellow;
-}
+ 
 </style>
 <body >
 
@@ -60,7 +62,7 @@ srcset="
 images\Design_bg_hlj2re_ar_16_9,c_fill,g_auto__c_scale,w_596.png 596w,
 images\Design_bg_hlj2re_ar_16_9,c_fill,g_auto__c_scale,w_720.png 720w">
 <img
-style="  position: absolute; z-index: -1 ;"
+style="position: absolute; z-index: -1 ;"
 sizes="(max-width: 1064px) 100vw, 1064px"
 srcset="
 images\Design_bg_hlj2re_ar_16_9,c_fill,g_auto__c_scale,w_1064.png 1064w"

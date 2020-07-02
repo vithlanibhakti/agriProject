@@ -1,24 +1,7 @@
 
 <?php
-session_start();
-include("dbConfig.php");
+include("connect.php");
 include("header.php");
-if(!isset($_SESSION['PhoneNo']))
-{
-	echo "<script>alert('You are not logged on...');</script>";
-	header("refresh:0; url='login.php'");
-}
-else
-{	
-	$PhoneNo = $_SESSION['PhoneNo'];
- }
-$result = mysql_query("SELECT CONCAT(prefix, Id) AS EmploeeCode FROM `custlogin` where PhoneNo ='".$_SESSION['PhoneNo']."'");
-$row = mysql_fetch_array($result);
- $EC = $row['EmploeeCode']; 
-
-$result = mysql_query("SELECT Name FROM `custlogin` where PhoneNo ='".$_SESSION['PhoneNo']."'");
-$row = mysql_fetch_array($result);
-$Name = $row['Name']; 
 ?>	 
 
 <div id="mySidenav" class="sidenav">
@@ -60,11 +43,11 @@ $opinion=$_POST["opinion"];
    $sql="INSERT INTO `soil`(`Farmer_name`, `Mobile`, `Village`, `Survey_number`, `Taluka`, `Testing_date`, `Crop_name`, `Sample_no`, `SoilReactionOb`, `SoilReactionRes`, `ECO`, `ECR`, `OCO`, `OCR`, `PhospherousOb`, `PhospherousRes`, `PotashOb`, `PotashRes`, `Opinion`) 
 	 VALUES ('$fname','$phn','$village','$survey','$taluka','$testing','$crop','$sample','$sro','$srr','$eco','$ecr','$oco','$ocr','$phoso','$phosr','$poto','$potr','$opinion')";
 	
-if(mysql_query($sql)){
-     echo "suuccess";
+  if(mysqli_query($con,$sql)){
+    echo "suuccess";
 
  } else{
- echo "ERROR: Could not able to execute $sql. " . mysql_error($conn);
+ echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
  }
   include("footer.html");
 ?>

@@ -1,24 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head>
- 
-<style>
-div.invoice {
-		border:2px solid #ccc;
-		padding:10px;
-			}
-.bottomright {
-  position: absolute;
-  bottom: 8px;
-  right: 16px;
-  font-size: 18px;
-}
-
-</style>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link href="themes/sidenavbar.css" rel="stylesheet" type="text/css">
+   <link href="themes/sidenavbar.css" rel="stylesheet" type="text/css">
 
 <script type="text/javascript">
 function validation()
@@ -31,57 +14,13 @@ document.form.name.select();
 return false;
 }
 }
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-}
-
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
-}
-
 </script>
 </head>
 <body>
 
 <?php
-session_start();
-include("dbConfig.php");
-if(!isset($_SESSION['PhoneNo']))
-{
-	echo "<script>alert('You are not logged on...');</script>";
-	header("refresh:0; url='login.php'");
-}
-else
-{	
-	$PhoneNo = $_SESSION['PhoneNo'];
- }
-$result = mysql_query("SELECT CONCAT(prefix, Id) AS EmploeeCode FROM `custlogin` where PhoneNo ='".$_SESSION['PhoneNo']."'");
-$row = mysql_fetch_array($result);
- $EC = $row['EmploeeCode']; 
-
-$result = mysql_query("SELECT Name FROM `custlogin` where PhoneNo ='".$_SESSION['PhoneNo']."'");
-$row = mysql_fetch_array($result);
-$Name = $row['Name']; 
-?>	 
-
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#"><?php echo $Name;?></a>
-  <a href="#">EmploeeCode<?php echo $EC;?></a>
-  <a href="#">History</a>
-  <a href="#">Recipt/Payment</a>
-  <a href="about.php">AboutUS</a>
-  <a href="logout.php">Logout</a>
-  
-</div>
-<div id="main">
-<div id="navbar">  
-  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
-<i class="fa fa-bell ffloat-right block2" aria-hidden="true" style="align:right"></i>
-</ul>                   
-<?php   echo $EC; ?>
+include("connect.php");      
+    include("header.php");?>
                 
 </div>
 	<div class="limiter">
@@ -103,7 +42,7 @@ $Name = $row['Name'];
    </nav>-->
    <br />
    <form method="post" id="comment_form">
-   <table>
+   <table class="table">
     <tr>
      <td><label>farmer name</label></td>
      <td><input type="text" name="fname" id="fname" class="form-control"></td>
@@ -138,7 +77,7 @@ $Name = $row['Name'];
 	 </table>
 	 
 	 <div class="invoice"><center> SOIL TESTING REPORT</center> </DIV><br><center>
-<table border="1px">
+<table  class="table">
 <th>SR</th>
 <th>PARAMETER</th>
 <th>OBSERVATION</th>
@@ -181,7 +120,8 @@ $Name = $row['Name'];
      <input type="submit" name="post" id="post" class="btn btn-info" value="Post" />
 	 
     </div>
-<table border="2px">
+    <div class="container">
+<table class="table">
 <tr><td>SR</td><td>PARAMETERS</td><td>LOW</td><td>MEDIUM</td><td>HIGH</td></tr>
 <tr>
 <td>1</td>
@@ -231,8 +171,8 @@ $Name = $row['Name'];
 <td>>300</td>
 </tr>
 </table>
-
-<table><tr><td>
+</div>
+<table  class="table" ><tr><td>
 note:- 1.this report gives the idea of fertility status of given sample (soil / water), note involves any garrenty of crop production.</td></tr>
 <tr>
 <td>2.Homogenous chemical materials measure the hetero genious soil materials, May be slight variable.</td></tr>

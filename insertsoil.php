@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("dbConfig.php");
+include("connect.php");
 if(!isset($_SESSION['PhoneNo']))
 {
 	echo "<script>alert('You are not logged on...');</script>";
@@ -10,8 +10,8 @@ else
 {	
 	$PhoneNo = $_SESSION['PhoneNo'];
  }
-$result = mysql_query("SELECT Id FROM `custlogin` where PhoneNo ='".$_SESSION['PhoneNo']."'");
-$row = mysql_fetch_array($result);
+$result = mysqli_query($con,"SELECT Id FROM `custlogin` where PhoneNo ='".$_SESSION['PhoneNo']."'");
+$row = mysqli_fetch_array($result);
  $EC = $row['Id']; 
 
 //insert.php

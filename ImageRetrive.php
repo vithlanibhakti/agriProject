@@ -1,13 +1,4 @@
 <style>
-
-
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
 body {
     font-family: "Open Sans", Arial, sans-serif;
     min-height: 100vh;
@@ -107,11 +98,11 @@ body {
 include("header.php");
 // Include the database configuration file  
 
-require_once 'dbConfig.php'; 
+require_once 'connect.php';  
  
 // Get image data from database 
-$result = mysql_query("SELECT * FROM images ORDER BY uploaded DESC"); 
-$num=mysql_num_rows($result);
+$result = mysqli_query($con,"SELECT * FROM images ORDER BY uploaded DESC"); 
+$num=mysqli_num_rows($result);
 $data = array();
 ?>
 
@@ -125,7 +116,7 @@ $data = array();
 
 			<div class="row">
 
-        <?php while($row = mysql_fetch_assoc($result)){ ?>
+        <?php while($row = mysqli_fetch_assoc($result)){ ?>
             <div class="row" >
             <div class="col-sm-12 col-6 m-1">
             <img class="img-fluid" src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" /> 

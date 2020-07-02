@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
   <link href="themes/adminside.css" rel="stylesheet" type="text/css">
   <link href="table.css" rel="stylesheet" type="text/css">
 <style>
@@ -57,61 +55,37 @@ function closeNav() {
 <body>
 
 <?php
-session_start();
-include("dbConfig.php");
-if(!isset($_SESSION['PhoneNo']))
-{
-	echo "<script>alert('You are not logged on...');</script>";
-	header("refresh:0; url='login.php'");
-}
-else
-{	
-	$PhoneNo = $_SESSION['PhoneNo'];
- }
-$result = mysql_query("SELECT CONCAT(prefix, Id) AS EmploeeCode FROM `custlogin` where PhoneNo ='".$_SESSION['PhoneNo']."'");
-$row = mysql_fetch_array($result);
- $EC = $row['EmploeeCode']; 
+// session_start();
+// include("dbConfig.php");
+// if(!isset($_SESSION['PhoneNo']))
+// {
+// 	echo "<script>alert('You are not logged on...');</script>";
+// 	header("refresh:0; url='login.php'");
+// }
+// else
+// {	
+// 	$PhoneNo = $_SESSION['PhoneNo'];
+//  }
+// $result = mysql_query("SELECT CONCAT(prefix, Id) AS EmploeeCode FROM `custlogin` where PhoneNo ='".$_SESSION['PhoneNo']."'");
+// $row = mysql_fetch_array($result);
+//  $EC = $row['EmploeeCode']; 
 
-$result = mysql_query("SELECT Name FROM `custlogin` where PhoneNo ='".$_SESSION['PhoneNo']."'");
-$row = mysql_fetch_array($result);
-$Name = $row['Name']; 
+// $result = mysql_query("SELECT Name FROM `custlogin` where PhoneNo ='".$_SESSION['PhoneNo']."'");
+// $row = mysql_fetch_array($result);
+// $Name = $row['Name']; 
+include("header.php");
+include("dbConfig.php");
 ?>	 
 
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <center><a href="#" class="bk ex1"><?php echo $Name;?></a><br></center><center>
-  <a href="#" class="bk ex1"><?php echo $EC;?></a><br></center><center>
-  <a href="#" class="bk ex1">History</a><br></center><center>
-  <a href="#" class="bk ex1">Recipt/Payment</a><br></center><center>
-  <a href="about.php" class="bk ex1">AboutUS</a><br></center><center>
-  <a href="logout.php" class="bk ex1">Logout</a><br></center><center>
-  
-</div>
+
 <div id="main">
-<div id="navbar">  
-  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
-<i class="fa fa-bell ffloat-right block2" aria-hidden="true" style="align:right"></i>
-</ul>                   
-<?php   echo $EC; ?>
-                
-</div>
+
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-85 p-b-20">
 		
 				
   <div class="container">
-   <!--<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-     
-     <ul class="nav navbar-nav navbar-right">
-      <li class="dropdown">
-       <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="label label-pill label-danger count" style="border-radius:10px;"></span> <span class="glyphicon glyphicon-bell" style="font-size:18px;"></span></a>
-       <ul class="dropdown-menu"></ul>
-      </li>
-     </ul>
-    </div>
-   </nav>-->
    <br />
    <form method="post" id="comment_form">
     <div class="form-group">

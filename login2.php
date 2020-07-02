@@ -1,13 +1,15 @@
 <?php 
 session_start();
-
+include('dbConfig.php');
 if(isset($_POST['submit']))  {
-	include('dbConfig.php');
-        $phn = $_POST['phn'];
-        $Password = $_POST['Password'];
+	
+	$phn =mysqli_real_escape_string($con, $_POST['phn']);
+	$Password = mysqli_real_escape_string($con,$_POST['Password']);
+	ECHO $phn,$Password;
 		
-	$fetch=mysql_query("SELECT * FROM custlogin WHERE PhoneNo='$phn' AND Password='$Password'  ");
-    $count=mysql_num_rows($fetch);
+	$fetch="SELECT * FROM custlogin WHERE PhoneNo='$phn' AND Password='$Password' ";
+	 $result = mysqli_query($con,$fetch);
+	$count=mysqli_num_rows($result);
     
 	if ($count != "")
 	{
@@ -15,8 +17,8 @@ if(isset($_POST['submit']))  {
    header("Location: HomePage.php");
 		
 	}elseif(isset($_POST['submit'])){
-		$fetch=mysql_query("SELECT * FROM admin_login WHERE PhoneNo='$phn' AND Password='$Password' ");
-    	$count=mysql_num_rows($fetch);
+		$fetch=mysqli_query($con,"SELECT * FROM admin_login WHERE PhoneNo='$phn' AND Password='$Password' ");
+    	$count=mysqli_num_rows($fetch);
     	echo $count;
 		if ($count != "")
 	 			{

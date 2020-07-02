@@ -1,5 +1,5 @@
 <?php
-include_once 'dbConfig.php';
+include_once 'connect.php';
 $name=$_POST["name"];
 $address=$_POST["address"];
 $area=$_POST["area"];
@@ -14,10 +14,10 @@ $area=$_POST["area"];
         
     }
     
-if(mysql_query($sql)){
+    if(mysqli_query($con,$sql)){
     header("Location: HomePage.php");
 } else{
-    echo "ERROR: Could not able to execute $sql. " . mysql_error($conn);
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
 }
   
 ?>

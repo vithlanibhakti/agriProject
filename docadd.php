@@ -18,7 +18,7 @@ $status = $statusMsg = '';
             $imgContent = addslashes(file_get_contents($image)); 
          
             // Insert image content into database 
-            $insert = mysql_query("INSERT INTO `attach`(`image`, `uploded`, `Id`) VALUES ('$imgContent', NOW(),'$id')"); 
+            $insert = mysqli_query($con,"INSERT INTO `attach`(`image`, `uploded`, `Id`) VALUES ('$imgContent', NOW(),'$id')"); 
              
             if($insert){ 
                 $status = 'success'; 

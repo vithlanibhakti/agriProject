@@ -87,10 +87,15 @@
     </ul>
   </nav>
   <!-- /.navbar -->
-
+<script>
+  $(document).ready(function() {
+    $(".btnclose").click();
+});
+  </script>
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-success bg-success elevation-4">
-    <!-- Brand Logo --> <a href="javascript:void(0)" data-widget="pushmenu" class="btn d-flex justify-content-end" href="#" role="button" style="align-content: flex-end;"> 
+  <aside class="main-sidebar sidebar-success bg-success elevation-4 ">
+    <!-- Brand Logo -->
+     <a href="javascript:void(0)" data-widget="pushmenu" class="btn btnclose d-flex justify-content-end" href="#" id="close" role="button" style="align-content: flex-end;"> 
     <p><i class="fa fa-times-circle" aria-hidden="true"></i>  </p> 
   </a>
     <a href="index3.html" class="brand-link">
