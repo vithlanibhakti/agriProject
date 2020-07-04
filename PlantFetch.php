@@ -1,12 +1,13 @@
 <?php
 include('connect.php');
 if(isset($_POST['view'])){
+ 
 if($_POST["view"] != '')
 {
-    $update_query = "UPDATE plantcons SET status = 1 WHERE status=0";
+    $update_query = "UPDATE plantcons2 SET status = 1 WHERE status=0";
     mysqli_query($con, $update_query);
 }
-$query = "SELECT * FROM plantcons ORDER BY id DESC LIMIT 5";
+$query = "SELECT * FROM plantcons2 ORDER BY id DESC LIMIT 5";
 $result = mysqli_query($con, $query);
 $output = '';
 if(mysqli_num_rows($result) > 0)
@@ -16,8 +17,7 @@ if(mysqli_num_rows($result) > 0)
    $output .= '
    <li>
    <a href="#">
-      <strong>'.$row["Farmer_Name"].'</strong><br />
-	  
+      <strong>'.$row["fname"].'</strong><br />
    </a>
    </li>
    ';
@@ -28,7 +28,7 @@ else{
      <li><a href="#" class="text-bold text-italic">No Noti Found</a></li>';
 }
 
-$status_query = "SELECT * FROM plantcons WHERE status=0";
+$status_query = "SELECT * FROM plantcons2 WHERE status=0";
 $result_query = mysqli_query($con, $status_query);
 $count = mysqli_num_rows($result_query);
 

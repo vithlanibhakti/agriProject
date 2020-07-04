@@ -36,7 +36,7 @@
 
 <body class="hold-transition sidebar-mini layout-fixed">
   <?php
-  include_once 'dbConfig.php';
+  include_once 'connect.php';
   session_start();
   if (!isset($_SESSION['PhoneNo'])) {
     echo "<script>alert('You are not logged on...');</script>";
@@ -89,7 +89,7 @@
   <!-- /.navbar -->
 <script>
   $(document).ready(function() {
-    $(".btnclose").click();
+    $("#close").click();
 });
   </script>
   <!-- Main Sidebar Container -->
@@ -117,6 +117,10 @@
             </a>
           </li>
 
+          <li class="nav-item">
+            <a class="nav-link text-white" href="notification.php">
+            <i class="nav-icon far fa-bell"></i>  
+            <p>Notification</p></a>
           </li>
           
           <li class="nav-item">

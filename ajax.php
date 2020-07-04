@@ -24,7 +24,7 @@ if (isset($_POST['search'])) {
 	$q = "SELECT  `Id`, `Name`, `Email`, `Password`, `PhoneNo` FROM `custlogin` WHERE Name LIKE '%$Name%' OR Id LIKE '%$Name%'";
 	$result = mysqli_query($con, $q);
 	if ($result === FALSE) {
-		die("Query Failed!" . mysqli_error() . $result);
+		die("Query Failed!" . mysqli_error($con) . $result);
 	}
 	echo "<div class='card mt-5'><div class=' card-header bg-secondary white-text text-center '>Customer</div>";
 	echo "<table class='table table-striped table-responsive-md btn-table'>";
@@ -47,7 +47,7 @@ if (isset($_POST['search'])) {
 	$q = "SELECT `Water_Id`, `Farmer_name`, `Mobile_no`, `Village`, `Survey_no`, `Taluka`, `TestingDate`, `CropName`, `SampleNo`,`Id` FROM `water` WHERE Farmer_Name LIKE '%$Name%' OR Id LIKE '%$Name%'";
 	$result = mysqli_query($con, $q);
 	if ($result === FALSE) {
-		die("Query Failed!" . mysqli_error() . $result);
+		die("Query Failed!" . mysqli_error($con) . $result);
 	}
 	echo "<div class='card'><div class=' card-header bg-secondary white-text text-center '>" . 'Water Test' . "</div>";
 	echo "<table class='table table-striped table-responsive-md btn-table'>";
@@ -76,7 +76,7 @@ if (isset($_POST['search'])) {
 	$q = "SELECT `Soil_Id`, `Farmer_name`, `Mobile`, `Village`, `Survey_number`, `Taluka`, `Testing_date`, `Crop_name`, `Sample_no`,`Id` FROM `soil` WHERE Farmer_Name LIKE '%$Name%' OR Id LIKE '%$Name%'";
 	$result = mysqli_query($con, $q);
 	if ($result === FALSE) {
-		die("Query Failed!" . mysqli_error() . $result);
+		die("Query Failed!" . mysqli_error($con) . $result);
 	}
 	echo "<div class='card'><div class=' card-header bg-secondary white-text text-center '>" . 'Soil Test' . "</div>";
 	echo "<table class='table table-striped table-responsive-md btn-table'>";
@@ -105,7 +105,7 @@ if (isset($_POST['search'])) {
 	$q = "SELECT `Plant_Id`, `Farmer_Name`, `Mobile_No`, `Village`, `Survey_No`, `Taluka`, `TestingDate`, `CropName`, `SampleNo`,`Payment_status`, `Id` FROM `plantcons` WHERE  Farmer_Name LIKE '%$Name%' OR Id LIKE '%$Name%'";
 	$result = mysqli_query($con, $q);
 	if ($result === FALSE) {
-		die("Query Failed!" . mysqli_error() . $result);
+		die("Query Failed!" . mysqli_error($con) . $result);
 	}
 	echo "<div class='card'><div class=' card-header bg-secondary white-text text-center '>" . 'Plant Consulantcy' . "</div>";
 	echo "<table class='table table-striped table-responsive-md btn-table'>";
@@ -135,7 +135,7 @@ if (isset($_POST['search'])) {
 	$q = "SELECT `Basic_Id`, `name`, `address`, `area`, `w`, `Id` FROM `try` WHERE name LIKE '%$Name%' OR Id LIKE '%$Name%'";
 	$result = mysqli_query($con, $q);
 	if ($result === FALSE) {
-		die("Query Failed!" . mysqli_error() . $result);
+		die("Query Failed!" . mysqli_error($con) . $result);
 	}
 	echo "<div class='card'><div class=' card-header bg-secondary white-text text-center '>" . 'Basic Details' . "</div>";
 	echo "<table class='table table-striped table-responsive-md btn-table'>";
@@ -165,7 +165,7 @@ if (isset($_POST['search'])) {
 	$q = "SELECT `Amount_Id`, `amount`, `date`,`Id` FROM `amount` WHERE Id LIKE '%$Name%' OR Id = '$EC'";
 	$result = mysqli_query($con, $q);
 	if ($result === FALSE) {
-		die("Query Failed!" . mysqli_error() . $result);
+		die("Query Failed!" . mysqli_error($con) . $result);
 	}
 	echo "<div class='card'><div class=' card-header bg-secondary white-text text-center '>" . 'Amount' . "</div>";
 	echo "<table class='table table-striped table-responsive-md btn-table'>";

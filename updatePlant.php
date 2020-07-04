@@ -4,7 +4,7 @@
 	$id=$_POST['id'];
 	echo json_encode(array($id));
 		
-	$sql = "UPDATE `plantcons` SET `Payment_status` = 'Paid' WHERE `plantcons`.`Plant_Id` = $id";
+	$sql = "UPDATE `plantcons2` SET `Payment_status` = 'Paid' WHERE `plantcons`.`Plant_Id` = $id";
 	if (mysqli_query($con, $sql)) {
 		echo json_encode(array("statusCode"=>200));
 	} 

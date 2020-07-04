@@ -16,7 +16,7 @@
 			$q = "SELECT `Id`, `Name`, `Email`, `Password`, `PhoneNo` FROM `custlogin`";
 			$result = mysqli_query($con,$q);
 			if ($result === FALSE) {
-				die("Query Failed!" . mysqli_error() . $result);
+				die("Query Failed!" . mysqli_error($con) . $result);
 			}
 
 			echo "<table class='table table-striped table-responsive-md btn-table'>";

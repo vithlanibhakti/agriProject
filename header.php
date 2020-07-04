@@ -69,6 +69,8 @@ $Name = $row['Name'];
           <div id="nav flex-column">
 
             <a href="HomePage.php" class="btn">Home</a>
+            
+            <a href="usernotification.php" class="btn">Notification</a>
 
             <a href="history.php" class="btn">History</a>
 
