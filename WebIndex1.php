@@ -19,7 +19,8 @@
             <div class="col-md-6">
                 <div id="my_camera"></div>
                 <br/>
-                <input type=button value="Take Snapshot" onClick="take_snapshot()">
+                <input type="file" class="btn btn-success" capture>
+                <!-- <input type=button value="Take Snapshot" onClick="take_snapshot()" capture> -->
                 <input type="hidden" name="image" class="image-tag">
             </div>
             <div class="col-md-6">

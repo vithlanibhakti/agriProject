@@ -1,7 +1,7 @@
 <html>
 
 <head>
-  <title>Header</title>
+  <title>shivagri consultancy</title>
   <meta charset="utf-8">
   <title>Slider</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">

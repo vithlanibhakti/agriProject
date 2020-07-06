@@ -7,15 +7,7 @@ body {
     padding-bottom: 3rem;
 }
 
-.img {
-    display: block;
-}
 
-.container {
-    max-width: 93.5rem;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
 /* Gallery Section */
 
 .gallery {

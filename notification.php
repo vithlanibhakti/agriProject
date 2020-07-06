@@ -10,7 +10,7 @@ $result = mysqli_query($con, $qurry);
 ?>
 
 <div class="container">
-    <div class="text-center card-header fa-2x ">List of PlantConsulantancy</div>
+    <div class="text-center card-header fa-2x ">PlantConsulantancy</div>
     <?php
 
     if ($result === FALSE) {
@@ -221,6 +221,9 @@ $result = mysqli_query($con, $qurry);
                     <label><input type="radio" name="t2">Form 2</label>
                     <label><input type="radio" name="t3">Form 3</label>
                 </div>
+
+                
+                <script type="text/javascript" src="https://form.jotform.com/jsform/201869485055060"></script>
 
                 <input type="hidden" name='id' value="<?= $plantcons2s['id'] ?>">
                 <input type="hidden" name='pid' value="<?= $plantcons2s['Plant_Id'] ?>">
